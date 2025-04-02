@@ -1185,7 +1185,7 @@ contact__form-area textarea {
 .education__title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #fff; /* White text color for contrast */
+  color: #0b111e; /* Dark blue-grey text */
   margin-bottom: 1rem;
   text-align: center;
 }
