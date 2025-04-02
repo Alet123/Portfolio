@@ -1228,14 +1228,14 @@ contact__form-area textarea {
 .education__card h3 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #333;
+  color: #FFFFFF;
   margin-bottom: 0.8rem;
 }
 
 /* Education Card Subtitle */
 .education__card .education__subtitle {
   font-size: 1.1rem;
-  color: #555;
+  color: #FFFFFF;
   margin-bottom: 0.5rem;
 }
 
@@ -1243,14 +1243,14 @@ contact__form-area textarea {
 .education__card .education__institution {
   font-weight: 500;
   font-size: 1.1rem;
-  color: #2a2a2a;
+  color: #FFFFFF;
   margin-bottom: 1rem;
 }
 
 /* Year of Education */
 .education__card .education__year {
   font-style: italic;
-  color: #888;
+  color: #FFFFFF;
   font-size: 1rem;
 }
 
