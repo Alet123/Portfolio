@@ -1257,7 +1257,7 @@ contact__form-area textarea {
 /* Media Query for responsiveness */
 @media (max-width: 768px) {
   .education__title {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   
   .education__subtitle {
