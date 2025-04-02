@@ -1169,3 +1169,114 @@ contact__form-area textarea {
     border-radius: 0.5rem;
   }
 }
+
+
+/* =======================
+   EDUCATION DETAILS SECTION
+======================== */
+
+/* Section wrapper */
+.education {
+  padding: 4rem 0;
+  background-color: #092f79; /* Dark Blue background */
+}
+
+/* Title of the Section */
+.education__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff; /* White text color for contrast */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Subtitle of the Section */
+.education__subtitle {
+  font-size: 1.2rem;
+  color: #ddd; /* Lighter grey for the subtitle */
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Education Container */
+.education__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Education Card */
+.education__card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid #e0e0e0;
+}
+
+/* Hover effect for cards */
+.education__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Education Card Title */
+.education__card h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+/* Education Card Subtitle */
+.education__card .education__subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Institution Name */
+.education__card .education__institution {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #2a2a2a;
+  margin-bottom: 1rem;
+}
+
+/* Year of Education */
+.education__card .education__year {
+  font-style: italic;
+  color: #888;
+  font-size: 1rem;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  .education__title {
+    font-size: 2rem;
+  }
+  
+  .education__subtitle {
+    font-size: 1rem;
+  }
+
+  .education__card h3 {
+    font-size: 1.6rem;
+  }
+
+  .education__card .education__subtitle {
+    font-size: 1rem;
+  }
+
+  .education__card .education__institution {
+    font-size: 1rem;
+  }
+
+  .education__card .education__year {
+    font-size: 0.9rem;
+  }
+}
