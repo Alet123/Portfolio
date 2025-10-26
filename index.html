@@ -439,6 +439,132 @@
   }
 </script>
 
+<!-- FORM  -->
+        <div class="contact__content">
+          <h3 class="contact__title">Write me your project</h3>
+          <form onsubmit="handleSubmit(event)" id="submit-form" action="" class="contact__form" method="POST">
+            <div class="contact__form-div">
+              <label for="" class="contact__form-tag">Name</label>
+              <input autocomplete="off" type="text" id="name" onkeyup="validate();" placeholder="Insert your name"
+                class="contact__form-input" name="name">
+              <span class="nameIndicator"></span>
+              <span class="name-text"></span>
+            </div>
+
+            <div class="contact__form-div">
+              <label for="" class="contact__form-tag">Mail</label>
+              <input autocomplete="off" id="email" onkeyup="validate();" name="email" type="text" placeholder="Insert your email"
+                class="contact__form-input">
+              <span class="indicator"></span>
+              <span class="indicator-text"></span>
+            </div>
+
+            <div class="contact__form-div contact__form-area">
+              <label for="" class="contact__form-tag">Project</label>
+              <textarea onkeyup="validate();" name="message" id="message" cols="30" rows="10"
+                placeholder="Write your project" class="contact__form-input"></textarea>
+              <span class="messageIndicator"></span>
+              <span class="message-text"></span>
+
+            </div>
+
+            <button type="submit" onclick="handleSubmit(event)" id="send" class="button">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Form Validation JS  -->
+  <script>
+    function validate() {
+      const form = document.getElementById("submit-form");
+      const email = document.getElementById("email").value;
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+      const send = document.getElementById("send");
+      const emailText = document.querySelector(".indicator-text");
+      const messageText = document.querySelector(".message-text");
+      const nameText = document.querySelector(".name-text");
+      const response = {
+        email: false,
+        name: false,
+        message: false
+      }
+      const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+      if (email.match(pattern)) {
+        form.classList.add('valid');
+        form.classList.remove('invalid');
+        emailText.innerHTML = ""
+        send.addEventListener("click", function (e) {
+          emailText.innerHTML = ""
+        })
+        response.email = true;
+
+      } else {
+        form.classList.add('invalid');
+        form.classList.remove('valid');
+        send.addEventListener("click", function (e) {
+          e.preventDefault();
+          emailText.innerHTML = "Enter Valid Email"
+        })
+        response.email = false;
+
+      }
+      if (email == "") {
+        form.classList.add('invalid');
+        form.classList.remove('valid');
+        response.email = false;
+      }
+      if (name.match(/[0-9]/)||name=="") {
+        form.classList.add('nameInvalid');
+        form.classList.remove('nameValid');
+        send.addEventListener("click",function(e){
+          e.preventDefault();
+          nameText.innerHTML = "Name cannot be empty!"
+        })
+        response.name = false;
+
+      } else {
+        form.classList.add('nameValid');
+        form.classList.remove('nameInvalid');
+        nameText.innerHTML = ""
+        send.addEventListener("click", function (e) {
+          nameText.innerHTML = ""
+        })
+
+        response.name = true;
+
+      }
+      if (message.length < 5) {
+        form.classList.add('messageInvalid');
+        form.classList.remove('messageValid');
+        send.addEventListener("click", function (e) {
+          e.preventDefault();
+          messageText.innerHTML = "Messsage cannot be empty!"
+
+        })
+        response.message = false;
+
+      } else {
+        form.classList.add('messageValid');
+        form.classList.remove('messageInvalid');
+        messageText.innerHTML = ""
+        send.addEventListener("click", function (e) {
+          messageText.innerHTML = ""
+
+        })
+
+        response.message = true;
+      }
+      if (response.email && response.message && response.name) {
+
+        return true;
+      } else {
+
+        return false;
+      }
+    }
+  </script>
 
   <!-- =============== FOOTER =============== -->
   <footer class="footer">
@@ -517,4 +643,5 @@
 </body>
 
 </html>
+
 
