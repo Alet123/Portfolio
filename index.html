@@ -3,429 +3,321 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Code With Alet Jac</title>
-
-  <!--=============== BOXICONS ===============-->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  
-  <!--=============== GOOGLE FONTS ===============-->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
-  <!--=============== CSS ===============-->
-  <style>
-    :root {
-      --accent: #a259ff;
-      --bg-dark: #0d0d0d;
-      --bg-light: #ffffff;
-      --text-light: #f5f5f5;
-      --text-dark: #222;
-      --transition: all 0.4s ease;
-    }
-
-    [data-theme="dark"] {
-      --bg: var(--bg-dark);
-      --text: var(--text-light);
-    }
-
-    [data-theme="light"] {
-      --bg: var(--bg-light);
-      --text: var(--text-dark);
-    }
-
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: var(--transition);
-      overflow-x: hidden;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(10, 10, 10, 0.6);
-      backdrop-filter: blur(15px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 1000;
-    }
-
-    .nav__logo {
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .nav__list {
-      display: flex;
-      list-style: none;
-      gap: 1rem;
-    }
-
-    .nav__link {
-      color: var(--text);
-      font-size: 1.2rem;
-      transition: var(--transition);
-    }
-
-    .nav__link:hover {
-      color: var(--accent);
-    }
-
-    .change__color {
-      cursor: pointer;
-      font-size: 1.3rem;
-      margin-left: 8px;
-      color: var(--accent);
-    }
-
-    main {
-      padding-top: 6rem;
-    }
-
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    h2.section__title {
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    span.section__subtitle {
-      color: var(--accent);
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* === Home === */
-    .home__container {
-      display: grid;
-      place-items: center;
-      text-align: center;
-      gap: 1.5rem;
-    }
-
-    .home__name {
-      font-size: 2.8rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, var(--accent), #ff61d9);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .home__img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 0 25px var(--accent);
-    }
-
-    .home__social {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .home__social-link {
-      color: var(--text);
-      font-size: 1.5rem;
-      transition: var(--transition);
-    }
-
-    .home__social-link:hover {
-      color: var(--accent);
-    }
-
-    .button {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      border-radius: 10px;
-      text-decoration: none;
-      transition: var(--transition);
-      margin: 0.5rem;
-    }
-
-    .button:hover {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    /* === About === */
-    .about__container {
-      display: grid;
-      gap: 2rem;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .about__img {
-      width: 180px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px var(--accent);
-      margin: auto;
-    }
-
-    .about__description {
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.6;
-      color: var(--text);
-    }
-
-    /* === Work Experience === */
-    .experience__container {
-      display: grid;
-      gap: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .experience__card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 1.5rem;
-      border-radius: 15px;
-      text-align: left;
-      transition: var(--transition);
-    }
-
-    .experience__card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
-      box-shadow: 0 0 20px var(--accent);
-    }
-
-    .experience__role {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .experience__date {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    /* === Contact === */
-    .contact__container {
-      display: grid;
-      gap: 2rem;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .contact__card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 1rem;
-      transition: var(--transition);
-    }
-
-    .contact__card:hover {
-      border: 1px solid var(--accent);
-      box-shadow: 0 0 15px var(--accent);
-    }
-
-    .contact__form input,
-    .contact__form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 0.8rem;
-      border: 2px solid transparent;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--text);
-      outline: none;
-      transition: var(--transition);
-    }
-
-    .contact__form input:focus,
-    .contact__form textarea:focus {
-      border-color: var(--accent);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background: rgba(10, 10, 10, 0.6);
-      backdrop-filter: blur(10px);
-    }
-
-    /* Accent Color Flash Animation */
-    .accent-flash {
-      position: fixed;
-      inset: 0;
-      background: var(--accent);
-      opacity: 0.1;
-      z-index: 9999;
-      animation: accentFade 0.6s ease forwards;
-      pointer-events: none;
-    }
-
-    @keyframes accentFade {
-      from { opacity: 0.25; }
-      to { opacity: 0; }
-    }
-
-    @media (max-width: 768px) {
-      .home__name { font-size: 2rem; }
-      header { flex-direction: column; }
-    }
-  </style>
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Code With ALET</title>
 </head>
 
-<body data-theme="dark">
+<body>
+  <!--=============== HEADER ===============-->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">Code With Alet Jac</a>
+      <div>
+        <i class="bx bx-brush change__color change__purple" onclick="set_color_purple()"></i>
+        <i class="bx bx-brush change__color change__pink" onclick="set_color_pink()"></i>
+        <i class="bx bx-brush change__color change__orange" onclick="set_color_orange()"></i>
+        <i class="bx bx-brush change__color change__blue" onclick="set_color_blue()"></i>
+        <i class="bx bx-brush change__color change__bluegray" onclick="set_color_bluegray()"></i>
+      </div>
 
-  <!-- Header -->
-  <header>
-    <a href="#" class="nav__logo">Code With Alet Jac</a>
-    <div>
-      <i class="bx bx-brush change__color" onclick="set_color_purple()"></i>
-      <i class="bx bx-brush change__color" onclick="set_color_pink()"></i>
-      <i class="bx bx-brush change__color" onclick="set_color_orange()"></i>
-      <i class="bx bx-brush change__color" onclick="set_color_blue()"></i>
-      <i class="bx bx-brush change__color" onclick="set_color_bluegray()"></i>
-    </div>
+      <div class="nav__menu">
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link active-link"><i class="bx bx-home-alt"></i></a></li>
+          <li><a href="#about" class="nav__link"><i class="bx bx-user"></i></a></li>
+          <li><a href="#education" class="nav__link"><i class="bx bx-book"></i></a></li>
+          <li><a href="#work" class="nav__link"><i class="bx bx-briefcase-alt-2"></i></a></li>
+          <li><a href="#contact" class="nav__link"><i class="bx bx-message-square-detail"></i></a></li>
+        </ul>
+      </div>
+
+      <i class="bx bx-moon change-theme" id="theme-button"></i>
+    </nav>
   </header>
 
-  <main>
-    <!-- Home -->
-    <section id="home">
-      <div class="home__container">
-        <img src="assets/img/Untitled-1.jpg" class="home__img" alt="Alet">
-        <h1 class="home__name">ALET JACOB</h1>
-        <h3>Developer | Designer</h3>
-        <div>
-          <a href="#about" class="button">About Me</a>
-          <a href="./assets/pdf/Resume Alet Jacob.pdf" download class="button">Download CV</a>
+  <!--=============== MAIN ===============-->
+  <main class="main">
+
+    <!--=============== HOME ===============-->
+    <section class="home section" id="home">
+      <div class="home__container container grid">
+        <div class="home__data">
+          <span class="home__greeting">Hello, I'm</span>
+          <h1 class="home__name">ALET JACOB</h1>
+          <h3 class="home__education">DEVELOPER | DESIGNER</h3>
+
+          <div class="home__buttons">
+            <a download="" href="./assets/pdf/Resume Alet Jacob.pdf" class="button button--ghost">Download CV</a>
+            <a href="#about" class="button">About me</a>
+          </div>
         </div>
+
+        <div class="home__handle">
+          <img src="assets/img/Untitled-1.jpg" alt="home_img" class="home__img" />
+        </div>
+
         <div class="home__social">
           <a href="https://www.linkedin.com/in/alet-jacob-5b58b5250" target="_blank" class="home__social-link"><i class="bx bxl-linkedin-square"></i></a>
           <a href="https://github.com/Alet123" target="_blank" class="home__social-link"><i class="bx bxl-github"></i></a>
-          <a href="https://wa.me/919061201481" target="_blank" class="home__social-link"><i class="bx bxl-whatsapp"></i></a>
+          <a href="http://wa.me/+919061201481" target="_blank" class="home__social-link"><i class="bx bxl-whatsapp"></i></a>
         </div>
+
+        <a href="#about" class="home__scroll">
+          <i class="bx bx-mouse home__scroll-icon"></i>
+          <span class="home__scroll-name">Scroll Down</span>
+        </a>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about">
+    <!--=============== ABOUT ===============-->
+    <section class="about section" id="about">
       <span class="section__subtitle">My Intro</span>
       <h2 class="section__title">About Me</h2>
-      <div class="about__container">
-        <img src="assets/img/about.png" alt="About" class="about__img">
-        <p class="about__description">
-          I craft <span style="color:var(--accent)">visual stories</span> that inspire and connect.<br><br>
-          From <span style="color:var(--accent)">branding</span> and <span style="color:var(--accent)">color grading</span> 
-          to <span style="color:var(--accent)">digital design</span> and <span style="color:var(--accent)">web development</span>, 
-          I transform ideas into visuals that speak with emotion and intent.
-        </p>
+
+      <div class="about__container container grid">
+        <img src="assets/img/about.png" alt="" class="about__img">
+
+        <div class="about__data">
+          <div class="about__info">
+            <div class="about__box">
+              <i class="bx bx-award about__icon"></i>
+              <h3 class="about__title">Experience</h3>
+              <span class="about__subtitle">Software Developer</span>
+            </div>
+            <div class="about__box">
+              <i class="bx bx-briefcase-alt about__icon"></i>
+              <h3 class="about__title">Completed</h3>
+              <span class="about__subtitle">8+ Projects</span>
+            </div>
+            <div class="about__box">
+              <i class="bx bx-support about__icon"></i>
+              <h3 class="about__title">Support</h3>
+              <span class="about__subtitle">Online 24/7</span>
+            </div>
+          </div>
+
+          <p class="about__description">
+            I craft <span class="highlight">visual stories</span> that inspire and connect.
+            From <span class="highlight">branding</span> to <span class="highlight">color grading</span>,
+            I transform ideas into visuals that speak louder than words.
+            Every design balances <span class="highlight">creativity</span> and <span class="highlight">strategy</span>.
+          </p>
+          <a href="#contact" class="button">Contact Me</a>
+        </div>
       </div>
     </section>
 
-    <!-- Work Experience -->
-    <section id="experience">
-      <span class="section__subtitle">Professional Journey</span>
+    <!--=============== EDUCATION DETAILS ===============-->
+    <section class="education section" id="education">
+      <span class="section__subtitle">My Educational Journey</span>
+      <h2 class="section__title">Education Details</h2>
+
+      <div class="education__container container grid">
+        <div class="education__card">
+          <h3 class="education__title">Bachelor of Computer Applications</h3>
+          <p class="education__institution">St George's College Aruvithura</p>
+          <p class="education__year">2018 - 2021</p>
+        </div>
+
+        <div class="education__card">
+          <h3 class="education__title">Higher Secondary Education | Science</h3>
+          <p class="education__institution">St Mary's Higher Secondary School</p>
+          <p class="education__year">2017 - 2018</p>
+        </div>
+
+        <div class="education__card">
+          <h3 class="education__title">Secondary School</h3>
+          <p class="education__institution">St Paul's Higher Secondary School</p>
+          <p class="education__year">2015 - 2016</p>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== WORK EXPERIENCE ===============-->
+    <section class="experience section" id="experience">
+      <span class="section__subtitle">My Journey</span>
       <h2 class="section__title">Work Experience</h2>
-      <div class="experience__container">
-        <div class="experience__card">
-          <h3>Bethany Wedding Stories</h3>
-          <p class="experience__role">Graphic Designer (Freelance)</p>
-          <p class="experience__date">Dec 2023 – Sep 2025 | Kottayam, Kerala</p>
-          <p>Designed custom wedding albums, logos, and brand materials using Adobe Photoshop & Illustrator, maintaining elegance and brand consistency.</p>
+
+      <div class="education__container container grid">
+        <div class="education__card">
+          <h3 class="education__title">Graphic Designer (Freelance)</h3>
+          <p class="education__institution">Bethany Wedding Stories, Kottayam</p>
+          <p class="education__year">Dec 2023 – Present</p>
+          <p class="education__desc">
+            Designed wedding albums, posters, and branding content using Adobe Photoshop & Illustrator.
+          </p>
         </div>
 
-        <div class="experience__card">
-          <h3>Gate Future Labs Pvt. Ltd.</h3>
-          <p class="experience__role">Web Developer</p>
-          <p class="experience__date">Aug 2023 – Mar 2025 | Bengaluru, India</p>
-          <p>Developed responsive websites and integrated AI features with Python & Django, enhancing performance and user experience.</p>
+        <div class="education__card">
+          <h3 class="education__title">Web Developer</h3>
+          <p class="education__institution">Gate Future Labs Pvt. Ltd., Bengaluru</p>
+          <p class="education__year">Aug 2023 – Mar 2025</p>
+          <p class="education__desc">
+            Developed and maintained responsive websites using Django, Python, and JavaScript.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <span class="section__subtitle">Get in Touch</span>
+    <!--=============== SKILLS ===============-->
+    <section class="skills section" id="skills">
+      <span class="section__subtitle">My abilities</span>
+      <h2 class="section__title">My Skills</h2>
+
+      <div class="skills__container container">
+        <div class="skills__content">
+          <div class="skills__box">
+            <div class="skills__group grid">
+              <div class="skills__data"><i class="bx bxl-html5"></i><h3>HTML/CSS</h3></div>
+              <div class="skills__data"><i class="bx bxl-javascript"></i><h3>JavaScript</h3></div>
+              <div class="skills__data"><i class="bx bxl-bootstrap"></i><h3>Bootstrap</h3></div>
+              <div class="skills__data"><i class="bx bxl-git"></i><h3>Git & GitHub</h3></div>
+              <div class="skills__data"><i class="bx bx-cloud-upload"></i><h3>Deployment</h3></div>
+              <div class="skills__data"><i class="bx bxl-python"></i><h3>Python</h3></div>
+              <div class="skills__data"><i class="bx bx-code-curly"></i><h3>Django</h3></div>
+              <div class="skills__data"><i class="bx bxl-flask"></i><h3>Flask</h3></div>
+              <div class="skills__data"><i class="bx bx-data"></i><h3>MySQL</h3></div>
+              <div class="skills__data"><i class="bx bx-server"></i><h3>SQLite</h3></div>
+              <div class="skills__data"><i class="bx bxl-adobe"></i><h3>Photoshop</h3></div>
+              <div class="skills__data"><i class="bx bxl-adobe"></i><h3>Illustrator</h3></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== WORK ===============-->
+    <section class="work section" id="work">
+      <span class="section__subtitle">My Portfolio</span>
+      <h2 class="section__title">Recent Works</h2>
+
+      <div class="work__container container grid">
+        <div class="work__card mix web">
+          <img src="assets/img/gatefl1.png" alt="" class="work__img">
+          <h3 class="work__title">GATE FUTURE LABS WEBSITE</h3>
+          <a href="https://gate123.pythonanywhere.com/" class="work__button">Link <i class="bx bx-right-arrow-alt work__icon"></i></a>
+        </div>
+
+        <div class="work__card mix web">
+          <img src="assets/img/bank1.png" alt="" class="work__img">
+          <h3 class="work__title">BANKING WEBSITE</h3>
+          <a href="http://bankingwebsite11.pythonanywhere.com/" class="work__button">Link <i class="bx bx-right-arrow-alt work__icon"></i></a>
+        </div>
+
+        <div class="work__card mix web">
+          <img src="assets/img/hospital1.png" alt="" class="work__img">
+          <h3 class="work__title">HOSPITAL WEBSITE</h3>
+          <a href="http://hospital.pythonanywhere.com/" class="work__button">Link <i class="bx bx-right-arrow-alt work__icon"></i></a>
+        </div>
+
+        <div class="work__card mix web">
+          <img src="assets/img/movie1.png" alt="" class="work__img">
+          <h3 class="work__title">ONLINE MOVIE STORE</h3>
+          <a href="http://movieprojectt11.pythonanywhere.com/" class="work__button">Link <i class="bx bx-right-arrow-alt work__icon"></i></a>
+        </div>
+
+        <div class="work__card mix mobil">
+          <img src="assets/img/ecom1.png" alt="" class="work__img">
+          <h3 class="work__title">E COMMERCE WEBSITE</h3>
+          <a href="http://ecommerceshop001.pythonanywhere.com/shopapp?page=1" class="work__button">Link <i class="bx bx-right-arrow-alt work__icon"></i></a>
+        </div>
+
+        <div class="work__card mix design">
+          <img src="assets/img/travel1.png" alt="" class="work__img">
+          <h3 class="work__title">TRAVEL WEBSITE</h3>
+          <a href="http://travello.pythonanywhere.com/" class="work__button">Link <i class="bx bx-right-arrow-alt work__icon"></i></a>
+        </div>
+
+        <div class="work__card mix design">
+          <img src="assets/img/todo1.png" alt="" class="work__img">
+          <h3 class="work__title">TODO APPLICATION</h3>
+          <a href="http://todoproject1.pythonanywhere.com/" class="work__button">Link <i class="bx bx-right-arrow-alt work__icon"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== CONTACT ===============-->
+    <section class="contact section" id="contact">
+      <span class="section__subtitle">Get in touch</span>
       <h2 class="section__title">Contact Me</h2>
-      <div class="contact__container">
-        <div class="contact__card">
-          <h3>Email</h3>
-          <p><a href="mailto:aletjacob123@gmail.com" style="color:var(--accent)">aletjacob123@gmail.com</a></p>
+
+      <div class="contact__container container grid">
+        <div class="contact__content">
+          <h3 class="contact__title">Talk to me</h3>
+          <div class="contact__info">
+            <div class="contact__card">
+              <i class="bx bxl-whatsapp contact__card--icon"></i>
+              <h3 class="contact__card-title">Whatsapp</h3>
+              <span class="contact__card-data">+91 9061201481</span>
+              <a href="https://api.whatsapp.com/send?phone=+919061201481&text=Hello, more information!" target="_blank" class="contact__button">Write me <i class="bx bx-right-arrow-alt contact__button-icon"></i></a>
+            </div>
+
+            <div class="contact__card">
+              <i class="bx bx-mail-send contact__card--icon"></i>
+              <h3 class="contact__card-title">Linkedin</h3>
+              <span class="contact__card-data">ALET JACOB</span>
+              <a href="https://www.linkedin.com/in/alet-jacob-5b58b5250" target="_blank" class="contact__button">Write me <i class="bx bx-right-arrow-alt contact__button-icon"></i></a>
+            </div>
+
+            <div class="contact__card">
+              <i class="bx bx-mail-send contact__card--icon"></i>
+              <h3 class="contact__card-title">Email</h3>
+              <span class="contact__card-data">aletjacob123@gmail.com</span>
+              <a href="mailto:aletjacob123@gmail.com" target="_blank" class="contact__button">Write me <i class="bx bx-right-arrow-alt contact__button-icon"></i></a>
+            </div>
+          </div>
         </div>
-        <div class="contact__card">
-          <h3>WhatsApp</h3>
-          <p><a href="https://wa.me/919061201481" target="_blank" style="color:var(--accent)">+91 9061201481</a></p>
+
+        <div class="contact__content">
+          <h3 class="contact__title">Write me your project</h3>
+          <form onsubmit="handleSubmit(event)" id="submit-form" class="contact__form" method="POST">
+            <div class="contact__form-div">
+              <label class="contact__form-tag">Name</label>
+              <input autocomplete="off" type="text" id="name" placeholder="Insert your name" class="contact__form-input" name="name">
+              <span class="name-text"></span>
+            </div>
+            <div class="contact__form-div">
+              <label class="contact__form-tag">Mail</label>
+              <input autocomplete="off" id="email" name="email" type="text" placeholder="Insert your email" class="contact__form-input">
+              <span class="indicator-text"></span>
+            </div>
+            <div class="contact__form-div contact__form-area">
+              <label class="contact__form-tag">Project</label>
+              <textarea name="message" id="message" cols="30" rows="10" placeholder="Write your project" class="contact__form-input"></textarea>
+              <span class="message-text"></span>
+            </div>
+            <button type="submit" id="send" class="button">Send Message</button>
+          </form>
         </div>
       </div>
-
-      <form class="contact__form" onsubmit="return validateForm(event)">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button class="button" type="submit">Send Message</button>
-      </form>
     </section>
+
   </main>
 
-  <footer>
-    <p>© 2025 CodeWithAletJac. All rights reserved.</p>
+  <!--=============== FOOTER ===============-->
+  <footer class="footer">
+    <div class="footer__container container">
+      <h1 class="footer__title">Code With Alet Jac</h1>
+      <ul class="footer__list">
+        <li><a href="#about" class="footer__link">About</a></li>
+        <li><a href="#work" class="footer__link">Projects</a></li>
+      </ul>
+      <ul class="footer__social">
+        <a href="https://www.facebook.com/alet.jacob.1" target="_blank" class="footer__social-link"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/alet.jac_?igsh=MXBmMjgzZWl5dmppcQ==" target="_blank" class="footer__social-link"><i class="bx bxl-instagram"></i></a>
+        <a href="https://github.com/Alet123" target="_blank" class="footer__social-link"><i class="bx bxl-github"></i></a>
+      </ul>
+      <span class="footer__copy">&#169; ALET JACOB 2025. All rights reserved.</span>
+    </div>
   </footer>
 
-  <!--=============== JS SCRIPT ===============-->
-  <script>
-    // Theme Accent Color Functions
-    function accentPulse() {
-      const flash = document.createElement("div");
-      flash.className = "accent-flash";
-      document.body.appendChild(flash);
-      setTimeout(() => flash.remove(), 600);
-    }
-
-    function setAccent(color) {
-      document.documentElement.style.setProperty("--accent", color);
-      accentPulse();
-    }
-
-    function set_color_purple() { setAccent("#a259ff"); }
-    function set_color_pink() { setAccent("#ff61d9"); }
-    function set_color_orange() { setAccent("#f97316"); }
-    function set_color_blue() { setAccent("#2196f3"); }
-    function set_color_bluegray() { setAccent("#546e7a"); }
-
-    // Contact Form Validation
-    function validateForm(event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      if (name.length < 2 || /\d/.test(name)) {
-        alert("Please enter a valid name.");
-        return false;
-      }
-      if (!/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email)) {
-        alert("Enter a valid email address.");
-        return false;
-      }
-      if (message.length < 5) {
-        alert("Message is too short!");
-        return false;
-      }
-      alert("Message sent successfully!");
-      return true;
-    }
-  </script>
+  <!--=============== JS ===============-->
+  <script src="assets/js/scrollreveal.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/mixitup.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
